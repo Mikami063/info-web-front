@@ -34,6 +34,6 @@ npm run dev
 
 I do strongly recommend anyone who not familiar with the react.js to watch this tutorial. it's short and covered the basics
 
-youtube.com/watch?v=SqcY0GlETPk
+https://www.youtube.com/watch?v=SqcY0GlETPk
 
 thanks
