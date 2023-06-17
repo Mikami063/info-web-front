@@ -20,10 +20,10 @@ npm install
 
 (to create the node_modules folder, which all the package for the project is installed, it's a local folder not synced by the git version control, so you have to run the command on your own laptop)
 
-to use bootstrap(a npm css library):
+to use an external library:
 
 ```
-npm install bootstrap@5.2.3
+npm install [package_name]
 ```
 
 to run the server and debug:
