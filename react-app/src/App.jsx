@@ -1,28 +1,33 @@
 import ListPage from "./components/ListPage"
-import {Route,Routes,Link} from 'react-router-dom'
+import {Route,Routes,Link, Router} from 'react-router-dom'
+
+import Home from "./containers/Home"
+import Login from "./containers/Login"
+import Signup from "./containers/Signup"
+import Activate from "./containers/Activate"
+import ResetPassword from "./containers/ResetPassword"
+import ResetPasswordConfirm from "./containers/ResetPasswordConfirm"
+
+import { Provider } from "react-redux"
+import store from "./store"
+
+import Layout from "./hocs/Layout"
 
 function App() {
-  return <>
-  <nav>
-    <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/favorite">Favorite</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact</Link>
-          </li>
-        </ul>
-  </nav>
-  <Routes>
-    <Route path="/" element={<ListPage/>}/>
-  </Routes>
-  </>
+  return(
+  <Provider store={store}>
+    <Layout />
+      <Routes>
+        <Route exact path='/' element={<Home />} />
+        <Route exact path='/login' element={<Login />} />
+        <Route exact path='/signup' element={<Signup />} />
+        <Route exact path='/reset-password' element={<ResetPassword />} />
+        <Route exact path='/password/reset/confirm/:uid/:token' element={<ResetPasswordConfirm />} />
+        <Route exact path='/activate/:uid/:token' element={<Activate />} />
+
+        <Route path="/ListPage" element={<ListPage/>}/>
+      </Routes>
+  </Provider>)
 }
 
 export default App
